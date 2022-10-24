@@ -39,6 +39,3 @@ $ docker-compose exec web python manage.py test
 7. The final step is to Stop the currently running container with Control+c and additionally type
 Run
 $ docker-compose down
-
-
-Please if you have any issue running the application, please contact me via email akintobiakinbiyi@gmail.com
