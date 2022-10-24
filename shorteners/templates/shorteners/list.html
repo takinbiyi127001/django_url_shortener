@@ -1,0 +1,30 @@
+{% extends "_base.html" %} 
+
+{% load static %}
+{% block title %}All Urls{%endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'shorteners/index.css' %}" />
+{% endblock css_files %} {% block content %}
+
+<h1>All Urls</h1>
+{% if object_list %}
+  <div class="card">
+    {% for url in object_list %}
+      <div class="url-item">
+        <p>{{ url.url|truncatechars:58 }}</p>
+        <a href="http://127.0.0.1:8000/{{url.uuid}}" target="_blank" rel="noopener noreferrer">
+          http://127.0.0.1:8000/{{url.uuid}}</a>
+        <p>Usage: {{url.time_used}}</p>
+      <div>
+    {% endfor %}
+  </div>
+
+{% endif %}
+
+<div>
+  <a class="home" href="{% url 'index' %}">Return to Home Page</a>
+</div>
+  
+
+{% endblock content %}
